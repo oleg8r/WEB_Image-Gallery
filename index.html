@@ -1,0 +1,499 @@
+<!DOCTYPE html>
+<!--
+    author:        Oleg Savelev
+    student ID:    060494135
+    created for:   WEB222 Assignment #1
+    due date:      October 3, 2020
+-->
+
+<html lang="en" id="top">
+<!--
+    The above html tag signifies the beginning of this web page.
+    Top ID is used to get back to the top of the page from different places on the page.
+-->
+
+
+    <!--HEAD-->
+    <head>
+        
+        <meta charset="UTF-8" />
+        <!-- 
+		    1) The above meta tag tells the web browser of the character encoding (UTF-8 = Unicode Transformation Format-8) selected for this web page 
+            See http://www.iana.org/assignments/character-sets/character-sets.xml for more character sets.
+            2) This meta tag is mandatory for the assignment submission.
+	    -->
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <!--
+            1) The above meta tag tells the web browser to set the viewport of the web page as part of responsive web design.
+            To be properly displayed on different size monitors.
+            2) This meta tag is mandatory for the assignment submission.
+        -->
+
+	    <!--meta http-equiv="refresh" content="0; url=http://www.google.ca/" /-->
+	    <!-- 
+            The above meta tag tells the web browser to load a different web page after zero seconds (immediately.)
+            Please use this meta tag if the website address is changed. Just replace "http://www.google.ca/" with a new website address.
+	    -->
+	
+        <meta name="description" content="Course: WEB222 Topic: Assignment #1">
+        <!-- 
+            The above meta tag provides the web browser a short description of this web page.
+            Several browsers, like Firefox and Opera, use this as the default description of bookmarked pages.
+        -->
+        
+        <meta name="author" content="Oleg Savelev">
+        <!--The above meta tag provides the web browser a short description of this web page.-->
+
+
+        <title>Gallery Assignment by Oleg Savelev</title>
+        <!--The value in the above title tag will appear in the title bar of the web browser.-->
+
+        <style>
+        *       /*Use this wildcard style selector for future global overriding styles*/
+        {
+		font-family: none;  
+	    } 
+        h1
+        {
+            font-family: georgia, garamond;
+            text-align: center;
+            color: rgb(6, 10, 255); 
+        }
+        h2
+        {
+            font-family: garamond, georgia;
+            text-align: center;
+            color: blue;  
+        }
+        h3
+        {
+            font-family: times, arial;
+            text-align: center;
+            color: rgb(217, 219, 78);
+        }
+        h4
+        {
+            font-family: arial, times;
+            text-align: left;
+            color: rgb(171, 4, 248);
+        }
+        h5
+        {
+            font-family: arial, times;
+            text-align: center;
+            color: rgb(245, 248, 248);
+        }
+        hr
+        {
+            border: 2px solid;
+            background-color: blue;
+            height: 2px;
+            width: 100%;
+        }
+        ul
+        {
+            margin: auto;
+            text-align: left;    
+        }
+        a:link  /* The :link is used to show the unvisited link style*/
+        {
+        color: blue;
+        }
+        a:visited    /* The :visited selector is used to highlight the visited link */
+        {
+        color: rgb(77, 5, 99);
+        }
+        li:hover    /* The ":hover" selector is used to select elements when you mouse over them. */
+        {
+            background-color: rgb(52, 155, 240);
+            color: rgb(211, 191, 195);
+            lighting-color: chartreuse;
+            text-decoration-color: yellow;
+        }
+        a:active    /* The ":active" selector is used to style the active link. */
+        {
+            color:  rgb(211, 191, 195);
+        }
+        body
+        {
+            position:  absolute;
+            left: 0%;
+            margin: auto; 
+            width: 100%;
+            color: blue; 
+            background:rgb(247, 114, 143);
+        }
+        header
+        {
+            position:  relative;
+            left: 0%;
+            width: 100%;
+            color: blue; 
+            background:rgb(225, 164, 250);
+        }
+        main
+        {
+            position: relative;
+            left: 20%;
+            width: 60%;
+        }
+        footer
+        {
+            position: relative;
+            bottom: 0%;
+            left: 20%;
+            width: 60%;
+            height: 380px;
+            background:rgb(119, 3, 42);
+            text-align: center;
+        }
+        nav
+        {
+            position: absolute;
+            right: 3%;
+            border: 3px solid rgba(9, 12, 184, 0.521);   
+            text-align: left;
+            top: 220px;
+            padding-top: 5pt;
+            padding-left: 20pt;
+            padding-right: 20pt;
+            padding-bottom: 10pt;
+            background: rgb(243, 193, 228);
+        }
+        article
+        {
+            background: rgb(52, 155, 240);
+            border: 3px solid rgba(9, 12, 184, 0.521); 
+        }
+        section
+        {
+            background: rgb(243, 193, 228);
+        }
+        section.container   /*This option of organizing the main space requires <section class="container">*/
+        {
+            background-color: #ffffff;
+            border: 0.2em solid rgba(50%, 50%, 50%, 0.5);
+            border-radius: 10px;
+            box-shadow:	6px 6px 30px rgba(55, 55, 55, .6);
+            height: 40vmax;
+            margin: 0 auto;
+            padding: 4vh 5vh 10vh;
+            width: 60%
+        }
+        aside
+        {
+            position: absolute;
+            right: 2.5%;
+            border: 2px solid rgba(9, 12, 184, 0.521);   
+            text-align: left;
+            top: 600px;
+            padding-top: 10pt;
+            padding-left: 10pt;
+            padding-right: 10pt;
+            padding-bottom: 10pt;
+            color: yellow; 
+            background: rgb(52, 155, 240);
+        }
+        img
+        {
+            border: 1px solid rgb(76, 0, 255);
+        }
+        #arrow /*Alt control Of top-arrow location*/
+        {
+            position: relative;
+            left: 50%;
+            display: block;
+        }
+        p
+        {
+            border: none;
+            text-align: center;
+            font-size: 1.2em;
+        }	
+        p.w3c
+        {
+            background-color: #fff;
+            border-width: 0px;
+            text-align: left;
+            font-size: 1.0em;
+        }	
+        .topleft
+        {
+            color: #f00;
+            left: 0px;
+            position: absolute;
+            top: 50%;
+        }	
+        .topright
+        {
+            color: #0f0;
+            right: 400px;
+            position: absolute;
+            top: 40%;
+        }	
+        .bottomleft
+        {
+            color: #00f;
+            left: 300px;
+            position: absolute;
+            bottom: 50%;
+        }	
+        .bottomright
+        {
+            color: #f0f;
+            right: 10%;
+            position: absolute;
+            bottom: 100px;
+        }	
+        .topleftcorner
+        {
+            color: #abf;
+            left: 0%;
+            position: absolute;
+            top: 0px;
+        }	
+        .bottomleftcorner
+        {
+            color: #000;
+            left: 0px;
+            position: absolute;
+            bottom: 0%;
+        }	
+        .bottomrightcorner
+        {
+            color: #abf;
+            right: 0%;
+            position: absolute;
+            bottom: 0px;
+        }	
+        .topbottomleftright
+        {
+            background-color: transparent;
+            border-color: #00f;
+            color: #00f;
+            left: 0%;
+            right: 0%;
+            position: absolute;
+            bottom: 0px;
+            top: 0px;
+        }	
+        .toprightcorner
+        {
+            color: #00f;
+            right: 0%;
+            position: fixed;
+            top: 0px;
+        }
+        div
+        {
+            background-color: #dc0;
+            border: 3px solid #00f;
+            font-size: 1.2em;
+            position: absolute;
+            text-align: center;
+            width: 30%;
+        }
+        .centering1
+        {
+            left: 0;
+            margin: 0 auto;
+            right: 0;
+            top: 20%;
+        }
+        .centering2
+        {
+            left: 50%;				/*	align left to center of parent element	*/
+            margin-left: -15%;		/*	shift half of width to the left	*/
+            top: 60%;
+        }
+
+        </style>
+
+        <!-- <script> -->
+            <!--
+                1) Code here internally on the webpage using JavaScript.
+                2) Or put your JavaScript code between the script tags if this website is supposed to use JavaScript.
+                3) Or link the external JavaScript file.
+            -->
+        <!-- </script> -->
+
+    </head>
+
+
+    <!--BODY-->
+    <body>
+
+        <!--Header-->
+        <header>
+        <!-- The top part of the website with all the main titles -->
+
+            <hr />
+            <h1><b>The Photo Gallery</b></h1>
+            <h2>The <b>Oleg Savelev</b> Virtual Collection</h2>
+            <hr />
+         
+            <nav>
+            <!--The website navigation/selection/menu-->
+
+                <h4 class="centering2" style="text-align: center">Collection</h4>
+                
+                <ul class="centering2" style="list-style-type: none;">
+                    <li><a href="#Pic01" style="text-decoration: none">City Hall<br/></a></li>
+                    <li><a href="#Pic02" style="text-decoration: none">Main Square<br/></a></li>
+                    <li><a href="#Pic03" style="text-decoration: none">Church<br/></a></li>
+                    <li><a href="#Pic04" style="text-decoration: none">City Center<br/></a></li>
+                    <li><a href="#Pic05" style="text-decoration: none">Building<br/></a></li>
+                    <li><a href="#Pic06" style="text-decoration: none">Art Cafe<br/></a></li>
+                    <li><a href="#Pic07" style="text-decoration: none">Cruise Ship<br/></a></li>
+                    <!-- The <a> tag defines a hyperlink that links to another web page or another part of the same web page-->
+                </ul>
+                
+            </nav>
+            
+        </header>
+            
+
+        <!--Main-->
+        <main>
+        <!--This part of the website contains all the main website content-->
+            
+            <article>
+                <h3>My visit to Kingston, the first capital of Canada</h3>
+
+                <section>
+            
+                    <img id="Pic01" src="Pic01.jpg" alt="Image Not Found" style="height: 400px; width: 500px; float: left; margin: 25px 50px 15px 15px;">
+                    <br>
+                    <h4><b>Oleg Savelev</b></h4>
+                    <h4>City Hall. Kingston</h4>
+                    <h4><i>August 29, 2020</i></h4>
+                    <br style="clear: both;">   <!-- Use CSS clear property to neutralize prior float property settings	-->
+                    <a href="#top"> <img src="Arrow.jpg" alt="Go to Top" style="height: 60px; width: 60px; margin: 5px 5px 5px 450px;"></a>
+                    <hr>
+
+                </section>
+
+                <section>
+            
+                    <hr>
+                    <img id="Pic02" src="Pic02.jpg" alt="Image Not Found" style="height: 400px; width: 500px; float: left; margin: 15px 50px 15px 15px;"><br/>
+                    <h4><b>Oleg Savelev</b></h4>
+                    <h4>Main Square. Kingston</h4>
+                    <h4><i>August 29, 2020</i></h4>
+                    <br style="clear: both;">   <!-- Use CSS clear property to neutralize prior float property settings	-->
+                    <a href="#top"> <img src="Arrow.jpg" alt="Go to Top" style="height: 60px; width: 60px; margin: 5px 5px 5px 450px;"></a>
+                    <hr>
+
+                </section>
+
+                <section>
+            
+                    <hr>
+                    <img id="Pic03" src="Pic03.jpg" alt="Image Not Found" style="height: 400px; width: 350px; float: left; margin: 15px 50px 15px 15px;"><br/>
+                    <h4><b>Oleg Savelev</b></h4>
+                    <h4>Church. Kingston</h4>
+                    <h4><i>August 30, 2020</i></h4>
+                    <br style="clear: both;">   <!-- Use CSS clear property to neutralize prior float property settings	-->
+                    <a href="#top"> <img src="Arrow.jpg" alt="Go to Top" style="height: 60px; width: 60px; margin: 5px 5px 5px 450px;"></a>
+                    <hr>
+ 
+                </section>
+
+                <section>
+            
+                    <hr>
+                    <img id="Pic04" src="Pic04.jpg" alt="Image Not Found" style="height: 400px; width: 500px; float: left; margin: 15px 50px 15px 15px;"><br/>
+                    <h4><b>Oleg Savelev</b></h4>
+                    <h4>City Center. Kingston</h4>
+                    <h4><i>August 30, 2020</i></h4>
+                    <br style="clear: both;">   <!-- Use CSS clear property to neutralize prior float property settings	-->
+                    <a href="#top"> <img src="Arrow.jpg" alt="Go to Top" style="height: 60px; width: 60px; margin: 5px 5px 5px 450px;"></a>
+                    <hr>
+
+                </section>
+
+                <section>
+            
+                    <hr>
+                    <img id="Pic05" src="Pic05.jpg" alt="Image Not Found" style="height: 400px; width: 500px; float: left; margin: 15px 50px 15px 15px;"><br/>
+                    <h4><b>Oleg Savelev</b></h4>
+                    <h4>Extraordinary building. Kingston</h4>
+                    <h4><i>August 29, 2020</i></h4>
+                    <br style="clear: both;">   <!-- Use CSS clear property to neutralize prior float property settings	-->
+                    <a href="#top"> <img src="Arrow.jpg" alt="Go to Top" style="height: 60px; width: 60px; margin: 5px 5px 5px 450px;"></a>
+                    <hr>
+
+                </section>
+
+                <section>
+
+                    <hr>
+                    <img id="Pic06" src="Pic06.jpg" alt="Image Not Found" style="height: 400px; width: 500px; float: left; margin: 15px 50px 15px 15px;"><br/>
+                    <h4><b>Oleg Savelev</b></h4>
+                    <h4>Art Cafe. Kingston</h4>
+                    <h4><i>August 30, 2020</i></h4>
+                    <br style="clear: both;">   <!-- Use CSS clear property to neutralize prior float property settings	-->
+                    <a href="#top"> <img src="Arrow.jpg" alt="Go to Top" style="height: 60px; width: 60px; margin: 5px 5px 5px 450px;"></a>
+                    <hr>
+
+                </section>
+
+                <section>
+            
+                    <hr>
+                    <img id="Pic07" src="Pic07.jpg" alt="Image Not Found" style="height: 300px; width: 500px; float: left; margin: 15px 50px 15px 15px;"><br/>
+                    <h4><b>Oleg Savelev</b></h4>
+                    <h4>Cruise Ship. Kingston</h4>
+                    <h4><i>August 29, 2020</i></h4>
+                    <br style="clear: both;">   <!-- Use CSS clear property to neutralize prior float property settings	-->
+                    <a href="#top"> <img src="Arrow.jpg" alt="Go to Top" style="height: 60px; width: 60px; margin: 5px 5px 5px 450px;"></a>
+
+                </section>
+            
+            </article>
+            
+        </main>
+
+        <aside>
+            <h5>Thank you for visiting us!</h5>
+        </aside>
+            
+        <!--Footer-->
+        <footer>
+        <!--This part of the website mainly contains the contact details-->
+        
+            <h2>Contacts</h2>
+            <h5>Please visit <b>The Photo Gallery</b> at:<br/></h5>
+            <address>
+                1111 Yonge Street<br/>
+                Toronto, ON A1B2C3<br/>
+            </address>
+            <h5>
+                <a href="tel:1234567890">Phone#: 123-456-7890<br/></a>
+                You can email The Photo Gallery at: <a href="mailto:osaveliev@myseneca.ca">osaveliev@myseneca.ca<br/></a>
+                The pictures are property of The Photo Gallery. More information on Kingston is available at:
+                <a href="https://en.wikipedia.org/wiki/Kingston,_Ontario" style="text-decoration: none" target="_blank" title="It will be opened in a new window or tab">Wikipedia</a>
+                <!--URL is used for this link. URL stands for a Universal Resource Locator-->
+            </h5>
+            <h5><small>The Photo Gallery, 2020</small></h5>
+            
+
+            <p class="w3c; centering2;">
+                <a href="http://jigsaw.w3.org/css-validator/check/referer">
+                    <img src="http://jigsaw.w3.org/css-validator/images/vcss" alt="Valid CSS!" style="border:0; width:88px; height:31px; margin: 5px 5px 5px 5px;" />
+                </a> 
+            <br style="clear: both;">
+            <a class="centering2" href="#top"> <img src="Arrow.jpg" alt="Go to Top" style="height: 60px; width: 60px; margin: 5px 5px 5px 150px;"></a>
+            <br style="clear: both;">
+        </footer>  
+
+    </body>
+
+<!--
+    author:        Oleg Savelev
+    student ID:    060494135
+    created for:   WEB222 Assignment #1
+    due date:      October 3, 2020
+-->
+
+</html>
