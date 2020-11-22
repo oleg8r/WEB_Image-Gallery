@@ -1,2 +1,2 @@
 # WEB_Image Gallery
-Web
+WEB_Image Gallery
